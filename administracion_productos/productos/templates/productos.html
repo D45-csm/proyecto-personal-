@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista de productos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+    <nav style="display: flex; align-items: start; justify-content: space-around; margin-top: 20px; ">
+    <p style="color: blue; font-size: 30px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; " >ElectrinicsHome</p>
+
+    <ul style="display: flex; justify-content: center; align-items: center; list-style: none; margin-left: 0px; margin-right: 20px;">
+        <li style="margin-left: 10px; margin-right: 10px;">inicio</li>
+        <li style="margin-left: 10px; margin-right: 10px;">productos</li>
+        <li style="margin-left: 10px; margin-right: 10px;">contacto</li>
+    </ul>
+    </nav>
+    <hr>
+</header>
+    <h1 style="text-align: center; color: blue; margin: 40px; font-family:fantasy;">Datos de Productos</h1>
+    
+    <ol class="list-group list-group-numbered">
+        {% for producto in productos_html %}
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+            <div class="fw-bold">{{producto.nombre}}</div>
+            <p>codigo: {{producto.codigo}} <br>
+               precio: {{producto.precio}} <br>
+               categoria: {{producto.categoria}} <br>
+               precio: {{producto.precio}} <br>
+               marca: {{producto.marca}} <br>
+               descripcion: {{producto.descripcion}} 
+            </p>
+            </div>
+            <span class="badge text-bg-primary rounded-pill">{{producto.cantidad}}</span>
+        </li>
+        {% endfor %}
+    </ol>
+</body>
+</html>
